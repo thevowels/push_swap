@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isodd.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 22:45:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/11/19 22:57:43 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/10/11 08:39:21 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/10/11 08:45:01 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-
-typedef struct s_stack
+/**
+ * @brief Checks if an integer is odd
+ * 
+ * Uses bitwise AND operation to efficiently test if the least significant
+ * bit is 1 (indicating an odd number).
+ * 
+ * @param i The integer to check
+ * @return 1 if the number is odd, 0 if even
+ * @note Efficient implementation using bitwise operation
+ */
+int	ft_isodd(int i)
 {
-	int value;
-	int v_val;
-	struct s_stack	*prev;
-	struct s_stack	*next;
-} T_stack;
-
-
-#endif
+	return (i & 0x1);
+}
