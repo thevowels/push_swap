@@ -6,51 +6,48 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/05 05:51:54 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/10 00:26:25 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <stdbool.h>
 # include "../libft/includes/libft.h"
 
-typedef struct s_stack
+typedef struct s_lst
 {
 	int				value;
 	int				index;
-	struct s_stack	*prev;
-	struct s_stack	*next;
-}					t_stack;
+	struct s_lst	*next;
+	struct s_lst	*prev;
+}					t_lst;
 
-// misc
+typedef struct s_stack
+{
+	t_lst			*head;
+	t_lst			*tail;
+	int				nodes;
+}	t_stack;
 
-void				error_msg(char *str);
-int					sorted(t_stack **head);
-void				free_stack(t_stack **head);
-int					count_arg(char **argv);
-
-// Linked listss
-int					count_nodes(t_stack *head);
-void				print_list(t_stack *head);
-void				insert_at_tail(t_stack **head, int new_value);
-t_stack				*make_new_node(int new_value);
+// utils.c
+void				error_message(char *str);
+int					get_matrix_size(char **matrix);
+int	generate_chunk(int size);
 
 
-void	swap(t_stack **head);
-void	swap_a(t_stack **head);
-void	swap_b(t_stack **head);
-void	swap_ab(t_stack **stack_a, t_stack **stack_b);
-void	push(t_stack **stack_from, t_stack **stack_to);
-void	push_a(t_stack **stack_a, t_stack **stack_b);
-void	push_b(t_stack **stack_a, t_stack **stack_b);
-void	rotate_cw(t_stack **head);
-void	rotate_a(t_stack **head);
-void	rotate_b(t_stack **head);
-void	rotate_ab(t_stack **stack_a, t_stack **stack_b);
-void	rotate_ccw(t_stack **head);
-void	r_rotate_a(t_stack **head);
-void	r_rotate_b(t_stack **head);
-void	r_rotate_ab(t_stack **stack_a, t_stack **stack_b);
+//	free.c
+void	ft_free(int *unordered, int *sorted, char *sms);
+void	free_matrix(char **matrix, int size);
+void	free_and_exit(matrix,size);
+void	free_list_and_exit(t_stack *stack, int **arrays, int i);
+void	free_stacks_and_arrays(t_stack *st_a, t_stack *st_b, int *a1, int *a2);
+
+// bubble_sort.c
+void	bubble_sort(int *arr, int*size);
+int		*copy_into_sorted(int *arr, int size);
+bool	is_sorted(int	*unordered, int size);
+int		*get_nums(int nums_count, char **argv);
 
 #endif
