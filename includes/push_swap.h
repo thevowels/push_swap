@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/10 00:26:25 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/10 01:47:13 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,13 @@ void	bubble_sort(int *arr, int*size);
 int		*copy_into_sorted(int *arr, int size);
 bool	is_sorted(int	*unordered, int size);
 int		*get_nums(int nums_count, char **argv);
+
+
+void swap_stack(t_stack *stack, char *action);
+void rotate_stack(t_stack *stack, char *action);
+void reverse_rotate_stack(t_stack *stack, char *action);
+void push_stack(t_stack *from , t_stack *to, char *action);
+void push_stack2(t_stack *from , char *action);
+
 
 #endif
