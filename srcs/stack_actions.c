@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 00:30:15 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/10 00:41:50 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/10 17:01:13 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void push_stack(t_stack *from , t_stack *to, char *action)
 	push_stack_2(from, action);
 }
 
-void push_stack2(t_stack *from , char *action)
+void push_stack_2(t_stack *from , char *action)
 {
 	if(from->nodes == 1)
 	{

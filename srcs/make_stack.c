@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 01:19:48 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/10 01:28:14 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/10 23:00:12 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_lst	*make_lst(t_stack *stack, int *arrays[], int size, int i)
 
 	new_lst = (t_lst *)malloc(sizeof(t_lst));
 	if (!new_lst)
-		free_and_exit(stack, arrays, i);
+		free_list_and_exit(stack, arrays, i);
 	if (i == 0)
 	{
 		new_lst->value = arrays[0][0];
@@ -55,10 +55,28 @@ t_lst	*make_lst(t_stack *stack, int *arrays[], int size, int i)
 	return (new_lst);
 }
 
+// void	make_stack_a(t_stack *stack, int *unordered, int *sorted, int size)
+// {
+// 	int i;
+// 	int *arrays[2];
+
+// 	stack->head = NULL;
+// 	stack->tail = NULL;
+// 	arrays[0] = unordered;
+// 	arrays[1] = sorted;
+// 	stack->head = make_lst(stack, arrays, size, 0);
+// 	i = 0;
+// 	while (++i < size)
+// 		make_lst(stack, arrays, size, 1);
+// 	stack->tail->next = stack->head;
+// 	stack->head->prev = stack->tail;
+// 	stack->nodes = size;
+// }
+
 void	make_stack_a(t_stack *stack, int *unordered, int *sorted, int size)
 {
-	int i;
-	int *arrays[2];
+	int	i;
+	int	*arrays[2];
 
 	stack->head = NULL;
 	stack->tail = NULL;
@@ -67,7 +85,7 @@ void	make_stack_a(t_stack *stack, int *unordered, int *sorted, int size)
 	stack->head = make_lst(stack, arrays, size, 0);
 	i = 0;
 	while (++i < size)
-		make_lst(stack, arrays, size, 1);
+		make_lst(stack, arrays, size, i);
 	stack->tail->next = stack->head;
 	stack->head->prev = stack->tail;
 	stack->nodes = size;

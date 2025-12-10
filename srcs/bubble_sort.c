@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:17:06 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/10 00:29:00 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/10 23:01:22 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,42 @@ void	bubble_sort(int *arr, int size)
 }
 // duplicating the int array.
 // I might rename it.
+// int	*copy_into_sorted(int *arr, int size)
+// {
+// 	int *sorted;
+// 	int i;
+// 	i = -1;
+
+// 	sorted = (int *) malloc(sizeof(int) * size);
+// 	if(!sorted)
+// 	{
+// 		free(arr);
+// 		error_message("Error\n");
+// 	}
+// 	while(++i < size)
+// 		sorted[i] = arr[i];
+// 	bubble_sort(sorted, size);
+// 	return (sorted);
+// }
+
 int	*copy_into_sorted(int *arr, int size)
 {
-	int *sorted;
-	int i;
-	i = -1;
+	int	*sorted;
+	int	i;
 
-	sorted = (int *) malloc(sizeof(int) * size);
-	if(!sorted)
+	i = -1;
+	sorted = (int *)malloc(sizeof(int) * size);
+	if (!sorted)
 	{
 		free(arr);
-		error_mesasge("Error\n");
+		error_message("Error\n");
 	}
-	while(++i < size)
+	while (++i < size)
 		sorted[i] = arr[i];
 	bubble_sort(sorted, size);
 	return (sorted);
 }
+
 
 // check whether the array is sorted or not.
 // providing the size helps a little bit but
@@ -81,16 +100,60 @@ bool is_sorted(int *unordered, int size)
 }
 
 // Just get the nums from the program's argv?
+// int	*get_nums(int nums_count, char **argv)
+// {
+// 	int		*nums;
+// 	char	**temp;
+// 	int		indx[3];
 
-int *get_nums(int nums_count, char **argv)
+// 	indx[0] = 0;
+// 	indx[2] = -1;
+// 	nums = (int *)malloc(sizeof(int) * nums_count);
+// 	if (!nums)
+// 		error_message("Error\n");
+// 	while (argv[++indx[0]])
+// 	{
+// 		temp = ft_split(argv[indx[0]], ' ');
+// 		if (!temp)
+// 			error_message("Error\n");
+// 		else if (temp[0] == NULL)
+// 			free_matrix(temp, 1);
+// 		else
+// 		{
+// 			indx[1] = -1;
+// 			while (temp[++indx[1]])
+// 				nums[++indx[2]] = ft_atoi(temp[indx[1]]);
+// 			free_matrix(temp, get_matrix_size(temp));
+// 		}
+// 	}
+// 	return (nums);
+// }
+
+int	*get_nums(int nums_count, char **argv)
 {
-	int	*nums;
+	int		*nums;
 	char	**temp;
 	int		indx[3];
 
 	indx[0] = 0;
-	indx[1] = -1;
-	nums = (int *) malloc(sizeof(int) * nums_count);
-	if(!nums)
+	indx[2] = -1;
+	nums = (int *)malloc(sizeof(int) * nums_count);
+	if (!nums)
 		error_message("Error\n");
+	while (argv[++indx[0]])
+	{
+		temp = ft_split(argv[indx[0]], ' ');
+		if (!temp)
+			error_message("Error\n");
+		else if (temp[0] == NULL)
+			free_matrix(temp, 1);
+		else
+		{
+			indx[1] = -1;
+			while (temp[++indx[1]])
+				nums[++indx[2]] = ft_atoi(temp[indx[1]]);
+			free_matrix(temp, get_matrix_size(temp));
+		}
+	}
+	return (nums);
 }

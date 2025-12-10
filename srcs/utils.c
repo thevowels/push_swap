@@ -6,11 +6,20 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:20:09 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/10 00:19:53 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/10 23:02:04 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "push_swap.h"
+
+void	init_stack(t_stack *st_b, int **sorted)
+{
+	st_b->head = NULL;
+	st_b->tail = NULL;
+	st_b->nodes = 0;
+	*sorted = NULL;
+}
 
 void	error_message(char *str)
 {
