@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 12:32:16 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/12 13:33:39 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:19:40 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_stack	*get_stack(void)
 		error_exit();
 	stack->head = NULL;
 	stack->tail = NULL;
+	stack->count = 0;
 	return (stack);
 }
 // need to find  a way to get the index
@@ -50,6 +51,33 @@ t_node	*find_last_node(t_stack *stack)
 	return (temp);
 }
 // find_last_node two times. can optimize it but we've only 25 lines
+// t_stack	*init_stack(int *arr, int arr_len)
+// {
+// 	t_stack	*stack;
+// 	t_node	*node;
+// 	int		i;
+
+// 	i = 0;
+// 	node = NULL;
+// 	stack = get_stack();
+// 	while (i < arr_len)
+// 	{
+// 		node = get_node(arr[i]);
+// 		if (stack->head)
+// 			{
+// 				node->prev = find_last_node(stack);
+// 				find_last_node(stack)->next = node;
+// 			}
+// 		else
+// 			stack->head = node;
+// 		stack->tail = node;
+// 		i++;
+// 	}
+// 	return (stack);
+// }
+
+#include <stdio.h>
+
 t_stack	*init_stack(int *arr, int arr_len)
 {
 	t_stack	*stack;
@@ -59,18 +87,14 @@ t_stack	*init_stack(int *arr, int arr_len)
 	i = 0;
 	node = NULL;
 	stack = get_stack();
-	while (i < arr_len -1)
+
+	while (i < arr_len)
 	{
+
 		node = get_node(arr[i]);
-		if (stack->head)
-			{
-				node->prev = find_last_node(stack);
-				find_last_node(stack)->next = node;
-			}
-		else
-			stack->head = node;
-		stack->tail = node;
+		push_stack(stack,node);
 		i++;
 	}
+
 	return (stack);
 }

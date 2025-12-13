@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_test.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/12 12:26:51 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/13 17:20:54 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/13 17:01:43 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/13 17:16:29 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include <stdio.h>
-int main(int argc, char **argv)
-{
 
-	t_stack *stack;
-	t_node	*node;
-	int		i;
+// void smth(char *s)
+// {
+// 	if(*s)
+// 		printf("%s\n", s);
+// }
 
-	int arr[] = {1,2,3,4,5,6};
-	stack = init_stack(arr, 6);
+// int main(void)
+// {
+// 	smth("asdfasd");
+// 	smth(NULL);
+// 	smth("abc");
 
-	// head_to_tail(stack);
-	// tail_to_head(stack);
-	// ft_printf("asdfasdf");
-	// rotate(stack, "ra");
-	// head_to_tail(stack);
-	// tail_to_head(stack);
-	// reverse_rotate(stack, "rra");
-	// head_to_tail(stack);
-	// tail_to_head(stack);
-
-	return (0);
-}
+// 	return (0);
+// }
