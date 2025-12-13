@@ -6,13 +6,29 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 13:26:00 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/12 13:31:34 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:29:14 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void print_stack(t_stack *stack, char *message)
+{
+	t_node *node;
 
+	node = stack->head;
+	if(message)
+		ft_printf("%s : ", message);
+	while(node)
+	{
+		ft_printf("%i", node->value);
+		if(!node->next)
+			break;
+		ft_printf(", ");
+		node = node->next;
+	}
+	ft_printf("\n");
+}
 void head_to_tail(t_stack *stack)
 {
 

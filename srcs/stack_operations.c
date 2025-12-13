@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 13:13:39 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/13 17:19:56 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:35:17 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void push_stack(t_stack *stack, t_node *node)
 t_node *pop_stack(t_stack *stack)
 {
 	t_node *node;
-	
+	if(!stack->head)
+		return (NULL);
 	node = stack->head;
 	stack->head = node->next;
 	stack->count -=1;
@@ -40,11 +41,10 @@ void pop_push(t_stack *from , t_stack *to, char *command)
 	t_node *node;
 
 	node = pop_stack(from);
-	push_stack(to, node);
-
+	if(node)
+		push_stack(to, node);
 	if(command)
 		ft_printf("%s\n", command);
-
 }
 
 

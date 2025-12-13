@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 12:26:51 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/13 17:20:54 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:32:23 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,19 @@
 int main(int argc, char **argv)
 {
 
-	t_stack *stack;
+	t_stack *stack_a;
+	t_stack	*stack_b;
 	t_node	*node;
 	int		i;
 
 	int arr[] = {1,2,3,4,5,6};
-	stack = init_stack(arr, 6);
+	stack_a = init_stack(arr, 6);
+	stack_b = get_stack();
+	print_stack(stack_a, "Stack A");
+	print_stack(stack_b, "Stack B");
+	pop_push(stack_b,stack_a,"pa");
+	print_stack(stack_a, "Stack A");
+	print_stack(stack_b, "Stack B");
 
 	// head_to_tail(stack);
 	// tail_to_head(stack);
