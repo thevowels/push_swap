@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/15 00:25:24 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/15 05:19:25 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,9 @@ int					find_biggest_smaller(t_stack *stack, int value);
 void				prepare_stack(t_stack *stack, int value);
 void				put_to_right_position(t_stack *stack, t_node *node);
 void				go_head_to_biggest(t_stack *stack);
+void				do_sort_optimized(t_stack *stack_a);
+int					rotate_cost(t_stack *stack, int biggest_small);
+int					rev_rotate_cost(t_stack *stack, int biggest_small);
+void				prepare_stack_modified(t_stack *stack, int value, char s);
+void				move_head(t_stack *stack, int value);
 #endif
