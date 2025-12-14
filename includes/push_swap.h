@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/14 22:49:42 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/15 00:25:24 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_stack
 {
 	t_node			*head;
 	t_node			*tail;
-	t_node			*count;
+	int				count;
 }					t_stack;
 
 // printf
@@ -59,4 +59,10 @@ void				print_stack(t_stack *stack, char *message);
 void				head_to_tail(t_stack *stack);
 void				tail_to_head(t_stack *stack);
 
+// turk operations
+void				do_sort(t_stack *stack_a);
+int					find_biggest_smaller(t_stack *stack, int value);
+void				prepare_stack(t_stack *stack, int value);
+void				put_to_right_position(t_stack *stack, t_node *node);
+void				go_head_to_biggest(t_stack *stack);
 #endif
