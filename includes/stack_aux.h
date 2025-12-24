@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_test.c                                        :+:      :+:    :+:   */
+/*   stack_aux.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/13 17:01:43 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/13 17:16:29 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/24 23:19:01 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/24 23:35:30 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef STACK_AUX_H
+# define STACK_AUX_H
 
-// void smth(char *s)
-// {
-// 	if(*s)
-// 		printf("%s\n", s);
-// }
+# include "push_swap.h"
 
-// int main(void)
-// {
-// 	smth("asdfasd");
-// 	smth(NULL);
-// 	smth("abc");
+bool	put(t_stack *from, t_stack *to);
+void	rotate(t_stack *stack);
+void	reverse_rotate(t_stack *stack);
+void	swap(t_stack *stack);
 
-// 	return (0);
-// }
+#endif

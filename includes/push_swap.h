@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/15 05:19:25 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/24 18:12:01 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,31 +43,4 @@ t_node				*get_node(int val);
 t_node				*find_last_node(t_stack *stack);
 t_stack				*init_stack(int *arr, int arr_len);
 
-// stack_operations.c
-void				push_stack(t_stack *stack, t_node *node);
-t_node				*pop_stack(t_stack *stack);
-void				pop_push(t_stack *from, t_stack *to, char *command);
-
-void				swap(t_stack *stack, char *command);
-void				rotate(t_stack *stack, char *command);
-void				reverse_rotate(t_stack *stack, char *command);
-
-// arg_control
-t_stack				*get_stack_from_args(char **argv);
-// test
-void				print_stack(t_stack *stack, char *message);
-void				head_to_tail(t_stack *stack);
-void				tail_to_head(t_stack *stack);
-
-// turk operations
-void				do_sort(t_stack *stack_a);
-int					find_biggest_smaller(t_stack *stack, int value);
-void				prepare_stack(t_stack *stack, int value);
-void				put_to_right_position(t_stack *stack, t_node *node);
-void				go_head_to_biggest(t_stack *stack);
-void				do_sort_optimized(t_stack *stack_a);
-int					rotate_cost(t_stack *stack, int biggest_small);
-int					rev_rotate_cost(t_stack *stack, int biggest_small);
-void				prepare_stack_modified(t_stack *stack, int value, char s);
-void				move_head(t_stack *stack, int value);
 #endif

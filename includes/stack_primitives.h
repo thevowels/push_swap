@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_control.c                                     :+:      :+:    :+:   */
+/*   stack_primitives.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 22:33:18 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/14 22:48:28 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/24 23:15:01 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/24 23:35:32 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef STACK_PRIMITIVES_H
+# define STACK_PRIMITIVES_H
+
 #include "push_swap.h"
 
-// TOdo check errors when the input is not integer or exceed the limits.
+bool	push(t_stack *stack, t_node *node);
+void	push_end(t_stack *stack, t_node *node);
+t_node	*pop(t_stack *stack);
+t_node	*pop_end(t_stack *stack);
 
-t_stack *get_stack_from_args(char **argv)
-{	
-	t_stack *stack_a;
-	t_node	*node;
-	
-	stack_a = get_stack();
-	while(*argv)
-	{
-		node = get_node(ft_atoi(*argv));
-		push_stack(stack_a, node);
-		argv++;
-	}
-	return stack_a;
-}
+#endif

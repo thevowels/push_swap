@@ -1,4 +1,0 @@
-stack b head -> target
-	find cheap ones from stack a between head and target.
-	
-stack a head -> target
