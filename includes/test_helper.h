@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_helper.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 00:23:49 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/25 00:32:49 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/25 00:29:36 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/25 00:30:47 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef TEST_HELPER_H
+#define TEST_HELPER_H
 
 #include "push_swap.h"
-#include "inits.h"
-#include "test_helper.h"
 
-int main(void)
-{
-	t_stack *stack;
-	int arr[] = {1,2,3,4,5,6};
-
-	stack = init_stack_from_arr(arr,6);
-	head_to_tail(stack);
-}
+void	print_stack(t_stack *stack, char *message);
+void	head_to_tail(t_stack *stack);
+void	tail_to_head(t_stack *stack);
+#endif
