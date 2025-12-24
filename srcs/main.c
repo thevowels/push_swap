@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 22:45:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/25 00:21:27 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/25 00:23:49 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/25 00:25:06 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
 
-# include "../libft/includes/libft.h"
-# include <stdbool.h>
-
-typedef struct s_node
+#include "push_swap.h"
+int main(void)
 {
-	int				value;
-	int				index;
-	struct s_node	*prev;
-	struct s_node	*next;
-}					t_node;
-
-typedef struct s_stack
-{
-	t_node			*head;
-	t_node			*tail;
-	int				count;
-}					t_stack;
-
-// printf
-int					ft_printf(const char *str, ...);
-
-// errors
-void				error_exit(void);
-
-#endif
+	
+	ft_printf("PUSH_SWAP\n");
+}
