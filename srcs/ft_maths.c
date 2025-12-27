@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   turk.h                                             :+:      :+:    :+:   */
+/*   ft_maths.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 00:37:04 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/28 02:08:47 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/28 00:29:55 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/28 02:14:45 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TURK_H
-#define TURK_H
+int	ft_min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
 
-#include "push_swap.h"
-
-void move_to_b(t_stack *stack_a, t_stack *stack_b);
-void move_back(t_stack *stack_a, t_stack *stack_b);
-void turk_sort(t_stack *stack_a , t_stack *stack_b);
-
-#endif
+int	ft_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}

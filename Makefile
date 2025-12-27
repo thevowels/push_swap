@@ -8,7 +8,7 @@ INCLUDES = -I includes
 
 SRC_FILES = errors.c ft_printf.c inits.c \
 			stack_aux.c stack_commands.c stack_primitives.c \
-			test_helper.c
+			test_helper.c turk.c ft_maths.c
 
 SRCS = $(addprefix ./srcs/, $(SRC_FILES))
 
