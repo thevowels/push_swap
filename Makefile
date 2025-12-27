@@ -22,6 +22,9 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) srcs/main.c $(OBJS) $(INCLUDES) -o $(NAME)
 
+test:  $(OBJS)
+	$(CC) $(CFLAGS) srcs/test.c $(OBJS) $(INCLUDES) -o $(NAME)
+
 clean: 
 	rm -f $(OBJS)
 
@@ -30,4 +33,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all re clean fclean
+.PHONY: all re clean fclean test

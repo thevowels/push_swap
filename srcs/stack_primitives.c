@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:14:18 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/24 23:41:10 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/27 22:58:02 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,21 @@ bool	push(t_stack *stack, t_node *node)
 	return (true);
 }
 
+/**
+ * @brief Pushes a node to the end of the stack
+ *
+ * Adds a new node to the tail (end) of the stack. The node becomes the new tail
+ * of the stack, and its prev pointer is set to the previous tail. The previous
+ * tail's next pointer is updated to point to the new node. The stack count is
+ * incremented.
+ *
+ * @param stack Pointer to the stack structure where the node will be pushed
+ * @param node Pointer to the node to be added to the end of the stack
+ *
+ * @note The node's next pointer is set to NULL as it becomes the tail
+ * @note Function validates input parameters before performing operations
+ * @note This function assumes the stack is not empty (stack->tail exists)
+ */
 void	push_end(t_stack *stack, t_node *node)
 {
 	if (!stack || !node)
@@ -89,6 +104,24 @@ t_node	*pop(t_stack *stack)
 	return (temp);
 }
 
+/**
+ * @brief Removes and returns the last node from the stack
+ *
+ * Removes the tail node from the stack and returns it. Updates the stack's
+ * tail pointer to the previous node, decrements the count, and handles edge cases
+ * for single-node stacks by delegating to pop(). The returned node's pointers
+ * are cleaned up to prevent dangling references.
+ *
+ * @param stack Pointer to the stack structure from which to pop the last node
+ *
+ * @return Pointer to the popped node on success,
+ *         NULL if stack is empty or invalid
+ *
+ * @note The returned node's next and prev pointers are set to NULL
+ * @note Caller is responsible for managing the memory of the returned node
+ * @note Function validates input parameters before performing operations
+ * @note For single-node stacks, delegates to pop() function
+ */
 t_node	*pop_end(t_stack *stack)
 {
 	t_node	*node;
