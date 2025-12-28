@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:14:18 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/27 22:58:02 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/29 04:45:27 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,22 @@ void	push_end(t_stack *stack, t_node *node)
 {
 	if (!stack || !node)
 		return ;
-	stack->tail->next = node;
-	node->prev = stack->tail;
-	node->next = NULL;
-	stack->tail = node;
+	
+
+	if(stack->count == 0)
+	{
+		stack->head = node;
+		stack->tail = node;
+	}
+	else
+	{
+		stack->tail->next = node;
+		node->prev = stack->tail;
+		node->next = NULL;
+		stack->tail = node;
+	}
 	stack->count += 1;
+
 }
 
 /**

@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:57:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/25 00:22:22 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/29 05:05:41 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include "push_swap.h"
 #include "stack_primitives.h"
+#include "stack_aux.h"
 
 t_stack	*init_stack(void)
 {
@@ -58,8 +59,40 @@ t_stack	*init_stack_from_arr(int *arr, int arr_len)
 	return (stack);
 }
 
+// if only 1 word, atoi and add to stack
+// if more than 1 word, do ft_split and then atoi then add to stack
+// now for simplicity, assume that the input are only one word for each
+bool	arg_to_stack(t_stack *stack, char *argv)
+{
+	int		i;
+	t_node	*node;
 
-// t_stack *init_stack_from_args(int argc, char **argv)
-// {
-// 	return (NULL);
-// }
+	if (!ft_safe_atoi(argv, &i))
+		return (false);
+	node = init_node(i);
+	if (!node)
+		return (false);
+	push_end(stack, node);
+	return (true);
+}
+
+t_stack	*init_stack_from_args(int argc, char **argv)
+{
+	t_stack *stack;
+
+	if (argc == 1)
+		exit(EXIT_SUCCESS);
+	stack = init_stack();
+	if (!stack)
+		error_exit();
+	
+	while (*(++argv))
+	{
+		if (!arg_to_stack(stack, *argv))
+		{
+			stack_free(stack);
+		}
+	}
+
+	return (stack);
+}

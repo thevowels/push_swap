@@ -19,7 +19,7 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) srcs/main.c
 	$(CC) $(CFLAGS) srcs/main.c $(OBJS) $(INCLUDES) -o $(NAME)
 
 test:  $(OBJS)

@@ -6,14 +6,15 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 18:02:08 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/24 18:02:46 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/28 04:22:06 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
-void error_exit()
+#include <unistd.h>
+
+void	error_exit(void)
 {
-	write(2,"Error\n",6);
+	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }

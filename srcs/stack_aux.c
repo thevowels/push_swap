@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 18:03:28 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/27 23:01:57 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/29 05:03:04 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,18 @@ void	swap(t_stack *stack)
 
 	push(stack, first);
 	push(stack, second);
+}
+
+void	stack_free(t_stack *stack)
+{
+	if(!stack)
+		return;
+	t_node *node;
+	while(stack->head)
+	{
+		node = stack->head;
+		stack->head = node->next;
+		free(node);
+	}
+	free(stack);
 }

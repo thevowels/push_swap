@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:19:01 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/24 23:35:30 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/29 04:52:12 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ bool	put(t_stack *from, t_stack *to);
 void	rotate(t_stack *stack);
 void	reverse_rotate(t_stack *stack);
 void	swap(t_stack *stack);
+void	stack_free(t_stack *stack);
 
 #endif

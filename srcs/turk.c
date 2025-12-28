@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 00:36:39 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/28 04:02:14 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/29 05:12:22 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,6 +266,19 @@ void	move_back(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
+bool is_sorted(t_stack *stack_a)
+{
+	t_node *node;
+	node = stack_a->head;
+	while(node->next)
+	{
+		if(node->next->value < node->value)
+			return (false);
+		node = node->next;
+	}
+	return (true);
+}
+
 /**
  * @brief
  * @param stack_a
@@ -283,25 +296,24 @@ void	turk_sort(t_stack *stack_a, t_stack *stack_b)
 	int		i;
 
 	i = 0;
-	if (!stack_a || stack_a->count <= 1)
+	if (!stack_a || stack_a->count <= 1 || is_sorted(stack_a))
 		return ;
 	move_to_b(stack_a, stack_b);
 	move_back(stack_a, stack_b);
 	find_smallest(stack_a, &basics);
 	if (basics.a_index < stack_a->count - basics.a_index)
 	{
-		while (i < basics.a_index)
+		while (i++ < basics.a_index)
 		{
 			rotate_command(stack_a, NULL, "ra");
-			i++;
 		}
 	}
 	else
 	{
-		while (i < stack_a->count - basics.a_index)
+		while (i++ < stack_a->count - basics.a_index)
 		{
 			reverse_rotate_command(stack_a, NULL, "rra");
-			i++;
+			
 		}
 	}
 }
