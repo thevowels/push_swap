@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 00:36:39 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/29 05:12:22 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/29 05:14:51 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -313,7 +313,6 @@ void	turk_sort(t_stack *stack_a, t_stack *stack_b)
 		while (i++ < stack_a->count - basics.a_index)
 		{
 			reverse_rotate_command(stack_a, NULL, "rra");
-			
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:57:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/29 05:05:41 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/29 05:15:20 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ t_stack	*init_stack_from_args(int argc, char **argv)
 		if (!arg_to_stack(stack, *argv))
 		{
 			stack_free(stack);
+			error_exit();
 		}
 	}
 
