@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:57:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:38:37 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 05:02:34 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "push_swap.h"
 #include "stack_aux.h"
 #include "stack_primitives.h"
-
+#include "ft_strings.h"
 /**
  * @brief Initializes an empty stack
  *
@@ -112,29 +112,34 @@ bool	is_contain(t_stack *stack, int value)
 }
 
 /**
- * @brief Converts a command line argument to a node and adds it to the stack
+ * @brief Converts command line argument(s) to nodes and adds them to the stack
  *
- * Parses a string argument as an integer and adds it to the end of the stack.
-
- * Performs validation to ensure the argument is a valid
-	integer and not a duplicate.
+ * Parses a string argument that may contain one or more space-separated integers
+ * and adds each valid integer as a node to the end of the stack. The function
+ * recursively processes multiple words within a single argument string.
+ * Performs validation to ensure each substring is a valid integer and not a duplicate.
  *
- * @param stack The stack to add the node to
- * @param argv The string argument to parse and add
- * @return bool true if successfully added,
-	false if parsing failed or duplicate found
+ * @param stack The stack to add the node(s) to
+ * @param argv The string argument containing one or more space-separated integers
+ * @return bool true if all integers were successfully parsed and added,
+ *              false if parsing failed, duplicate found, or memory allocation failed
  */
 bool	arg_to_stack(t_stack *stack, char *argv)
 {
 	int		i;
 	t_node	*node;
-
+	if(!argv)
+		return (false);
 	if (!ft_safe_atoi(argv, &i) || is_contain(stack, i))
 		return (false);
 	node = init_node(i);
 	if (!node)
 		return (false);
 	push_end(stack, node);
+	if(count_words(argv) != 1)
+		if(!arg_to_stack(stack,next_word(argv)))
+			return (false);
+
 	return (true);
 }
 

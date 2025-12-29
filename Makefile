@@ -9,7 +9,7 @@ INCLUDES = -I includes
 SRC_FILES = errors.c ft_printf.c inits.c \
 			stack_aux.c stack_commands.c stack_primitives.c \
 			test_helper.c turk.c turk_moves.c \
-			ft_maths.c costs.c \
+			ft_maths.c ft_strings.c costs.c \
 
 			
 

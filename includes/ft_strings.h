@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strings.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 00:23:49 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 04:59:19 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/30 04:48:24 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/30 04:48:46 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "push_swap.h"
-#include "inits.h"
-#include "test_helper.h"
+#ifndef FT_STRINGS_H
+# define FT_STRINGS_H
 
-int main(int argc, char **argv)
-{
-	t_stack	*stack_a;
+int	count_words(char *str);
+char *next_word(char *str);
 
-	stack_a = init_stack_from_args(argc, argv);
-	head_to_tail(stack_a);
-
-}
+#endif
