@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 00:29:55 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:03:24 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:35:25 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * @brief Returns the minimum of two integers
- * 
+ *
  * @param a First integer
  * @param b Second integer
  * @return int The smaller of the two values
@@ -28,7 +28,7 @@ int	ft_min(int a, int b)
 
 /**
  * @brief Returns the maximum of two integers
- * 
+ *
  * @param a First integer
  * @param b Second integer
  * @return int The larger of the two values
@@ -42,11 +42,11 @@ int	ft_max(int a, int b)
 
 /**
  * @brief Safely converts a string to an integer with overflow protection
- * 
+ *
  * This function parses a string and converts it to an integer, similar to atoi
- * but with additional safety checks. It handles leading whitespace and 
+ * but with additional safety checks. It handles leading whitespace and
  * optional sign characters.
- * 
+ *
  * @param str The string to convert
  * @param value Pointer to store the converted integer value
  * @return bool Always returns true (may need enhancement for error checking)
@@ -56,7 +56,6 @@ bool	ft_safe_atoi(const char *str, int *value)
 	long	a;
 	long	sign;
 	long	i;
-	// int		len;
 
 	a = 0;
 	sign = 1;

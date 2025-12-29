@@ -6,16 +6,14 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 00:37:04 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:28:31 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:53:11 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TURK_H
 # define TURK_H
 
-# include "costs.h"
 # include "push_swap.h"
-# include "turk_moves.h"
 
 t_node	*find_target(t_stack *stack_a, t_node *current, t_basic *basics);
 void	move_back(t_stack *stack_a, t_stack *stack_b);

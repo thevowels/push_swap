@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/28 03:50:03 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:52:30 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ typedef struct s_basic
 	int				a_index;
 	t_cost_calc		costs;
 }					t_basic;
-
 
 /*
 move

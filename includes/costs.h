@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 03:15:25 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:31:20 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:53:41 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define COSTS_H
 
 # include "push_swap.h"
+
 t_node		*find_smallest_larger(t_stack *stack_a, t_node *current,
 				t_basic *basics);
 t_node		*find_smallest(t_stack *stack_a, t_basic *basics);

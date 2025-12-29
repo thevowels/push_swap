@@ -6,10 +6,9 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:14:18 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/29 04:45:27 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:42:39 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -62,9 +61,7 @@ void	push_end(t_stack *stack, t_node *node)
 {
 	if (!stack || !node)
 		return ;
-	
-
-	if(stack->count == 0)
+	if (stack->count == 0)
 	{
 		stack->head = node;
 		stack->tail = node;
@@ -77,7 +74,6 @@ void	push_end(t_stack *stack, t_node *node)
 		stack->tail = node;
 	}
 	stack->count += 1;
-
 }
 
 /**
@@ -119,7 +115,8 @@ t_node	*pop(t_stack *stack)
  * @brief Removes and returns the last node from the stack
  *
  * Removes the tail node from the stack and returns it. Updates the stack's
- * tail pointer to the previous node, decrements the count, and handles edge cases
+ * tail pointer to the previous node, decrements the count, 
+ * and handles edge cases
  * for single-node stacks by delegating to pop(). The returned node's pointers
  * are cleaned up to prevent dangling references.
  *

@@ -6,14 +6,13 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 03:22:45 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:30:50 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:48:44 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "turk_moves.h"
 #include "stack_commands.h"
-# include "turk.h"
-
+#include "turk.h"
 
 /**
  * @brief Moves all but the last 2 elements from stack A to stack B
@@ -89,13 +88,11 @@ void	do_op_down(t_stack *stack_a, t_stack *stack_b, t_cheapest *cheapest)
 	while (i++ <= ft_min(a_down, b_down))
 		reverse_rotate_command(stack_a, stack_b, "rrr");
 	if (a_down > b_down)
-	{
 		while (i < a_down)
 		{
 			reverse_rotate_command(stack_a, NULL, "rra");
 			i++;
 		}
-	}
 	else
 		while (i < b_down)
 		{

@@ -6,13 +6,13 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 03:15:10 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:32:36 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:34:42 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "costs.h"
-# include "turk.h"
-# include "turk_moves.h"
+#include "turk.h"
+#include "turk_moves.h"
 
 /**
  * @brief Finds the smallest element in stack A that is larger than current
@@ -161,7 +161,7 @@ void	get_basic_costs(t_stack *stack_a, t_stack *stack_b, t_node *current,
  * @param stack_b Source stack to analyze
  * @param basics Working structure for cost calculations
 
-	* @return t_cheapest Structure containing the optimal node and movement strategy
+ * @return t_cheapest Structure containing the optimalnode and movement strategy
  */
 t_cheapest	calculate_cheapest_node(t_stack *stack_a, t_stack *stack_b,
 		t_basic *basics)
