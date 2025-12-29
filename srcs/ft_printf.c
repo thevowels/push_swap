@@ -6,19 +6,24 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 22:26:05 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/24 18:01:41 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:03:24 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
 
-/*
-	flag:
-	1	base 10
-	2	base 16 Lower case
-	3	base 16 Upper case
-*/
+/**
+ * @brief Prints a number in a specified base (decimal or hexadecimal)
+ * 
+ * This function recursively prints a number in the specified base.
+ * It supports both uppercase and lowercase hexadecimal output.
+ * 
+ * @param base The base for number representation (10 for decimal, 16 for hex)
+ * @param upper Character indicating case: 'X' for uppercase hex, 'x'/'u' for lowercase
+ * @param nb The number to print
+ * @return int Number of characters written
+ */
 int	ft_fpf_printbase(int base, int upper, long nb)
 {
 	char	*str_base[2];
@@ -48,6 +53,15 @@ int	ft_fpf_printbase(int base, int upper, long nb)
 	return (length);
 }
 
+/**
+ * @brief Prints a string to stdout
+ * 
+ * Prints the given string to standard output. If the string is NULL,
+ * it prints "(null)" instead.
+ * 
+ * @param str The string to print
+ * @return int Number of characters written
+ */
 static int	ft_fpf_printstr(char *str)
 {
 	int	i;
@@ -62,7 +76,17 @@ static int	ft_fpf_printstr(char *str)
 	return (i);
 }
 
-
+/**
+ * @brief Handles format specifier processing for ft_printf
+ * 
+ * This function processes different format specifiers like %s, %d, %i, %u, %x, %X, %p
+ * and calls the appropriate printing functions.
+ * 
+ * @param args Variable argument list
+ * @param f Pointer to the current format character
+ * @param length Pointer to accumulate total characters written
+ * @param ptr Temporary storage for pointer values
+ */
 void	ft_formats(va_list args, const char *f, int *length,
 		unsigned long long ptr)
 {
@@ -92,6 +116,17 @@ void	ft_formats(va_list args, const char *f, int *length,
 		(*length) += write(1, (f - 1), (1 + (*f != '%' && *f != 0)));
 }
 
+/**
+ * @brief Custom implementation of printf function
+ * 
+ * A simplified version of printf that supports basic format specifiers:
+ * %c (character), %s (string), %d/%i (decimal), %u (unsigned), 
+ * %x/%X (hexadecimal), %p (pointer), %% (literal %)
+ * 
+ * @param str Format string with format specifiers
+ * @param ... Variable arguments corresponding to format specifiers
+ * @return int Total number of characters written
+ */
 int	ft_printf(const char *str, ...)
 {
 	va_list				args;

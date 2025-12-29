@@ -16,6 +16,17 @@
 #include "test_helper.h"
 #include "turk.h"
 #include <stdio.h>
+
+/**
+ * @brief Test function for debugging and validating the push_swap implementation
+ * 
+ * This is a test main function used for development and debugging purposes.
+ * It creates a predefined stack with test values and runs the Turk sort algorithm
+ * to verify the sorting functionality. Contains commented code for step-by-step
+ * debugging of the move_to_b and move_back operations.
+ * 
+ * @return int Program exit status (0 on success)
+ */
 int main(void)
 {
     t_stack *stack;

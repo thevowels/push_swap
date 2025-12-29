@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 18:03:28 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/29 05:03:04 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:03:24 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,14 @@ void	swap(t_stack *stack)
 	push(stack, second);
 }
 
+/**
+ * @brief Frees all memory associated with a stack
+ * 
+ * Deallocates all nodes in the stack by traversing through them,
+ * then frees the stack structure itself. Handles NULL stack gracefully.
+ * 
+ * @param stack Pointer to the stack to be freed
+ */
 void	stack_free(t_stack *stack)
 {
 	if(!stack)
