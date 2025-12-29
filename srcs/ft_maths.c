@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 00:29:55 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:58:32 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 05:10:02 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,22 @@ int	ft_max(int a, int b)
 		return (a);
 	return (b);
 }
+bool	check_str(const char *str)
+{
+	while (*str)
+	{
+		if (!(*str == ' ' || *str == '\n' || *str == '\t' || *str == '\v'
+				|| *str == '\f' || *str == '\r' || *str == '+' || *str == '-'
+				|| ft_isdigit(*str)))
+			return (false);
+		str++;
+	}
+	return (true);
+}
+int	ft_isdigit(int i)
+{
+	return ((unsigned)i - '0' < 10);
+}
 
 /**
  * @brief Safely converts a string to an integer with overflow protection
@@ -60,8 +76,10 @@ bool	ft_safe_atoi(const char *str, int *value)
 	a = 0;
 	sign = 1;
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r')
+	if (!check_str(str))
+		return (false);
+	while (str[i] && (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+			|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r'))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
