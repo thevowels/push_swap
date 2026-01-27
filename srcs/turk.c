@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 00:36:39 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/01/27 23:19:29 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/01/28 00:02:35 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ void	move_back(t_stack *stack_a, t_stack *stack_b)
 	{
 		basics.index = 0;
 		cheapest = calculate_cheapest_node(stack_a, stack_b, &basics);
-		ft_printf("cheapest nod is => %d and move number is: %d \n", cheapest.b_node->value, cheapest.move);
-		ft_printf("A index: %d && B index: %d\n", cheapest.a_index, cheapest.b_index);
 		if (cheapest.cost == -1)
 			break ;
 		if (cheapest.move == 0)
