@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 00:30:26 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:52:43 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/01/27 20:11:18 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,4 @@
 
 int		ft_min(int a, int b);
 int		ft_max(int a, int b);
-bool	ft_safe_atoi(const char *str, int *value);
 #endif

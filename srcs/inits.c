@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:57:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 05:02:34 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/01/27 22:49:47 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "stack_aux.h"
 #include "stack_primitives.h"
 #include "ft_strings.h"
+#include "libft.h"
+bool	arg_to_stack(t_stack *stack, char *argv);
 /**
  * @brief Initializes an empty stack
  *
@@ -130,7 +132,7 @@ bool	arg_to_stack(t_stack *stack, char *argv)
 	t_node	*node;
 	if(!argv)
 		return (false);
-	if (!ft_safe_atoi(argv, &i) || is_contain(stack, i))
+	if (ft_safe_atoi_ps(argv, &i) == -1 || is_contain(stack, i))
 		return (false);
 	node = init_node(i);
 	if (!node)
@@ -139,7 +141,6 @@ bool	arg_to_stack(t_stack *stack, char *argv)
 	if(count_words(argv) != 1)
 		if(!arg_to_stack(stack,next_word(argv)))
 			return (false);
-
 	return (true);
 }
 

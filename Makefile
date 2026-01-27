@@ -4,7 +4,12 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-INCLUDES = -I includes
+
+LIBFT	= ./libft/libft.a
+LIBFT_PATH = ./libft/
+
+INCLUDES = -I includes -I $(LIBFT_PATH)includes
+
 
 SRC_FILES = errors.c ft_printf.c inits.c \
 			stack_aux.c stack_commands.c stack_primitives.c \
@@ -17,22 +22,27 @@ SRCS = $(addprefix ./srcs/, $(SRC_FILES))
 
 OBJS = $(SRCS:.c=.o)
 
-.c.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
 all: $(NAME)
 
-$(NAME): $(OBJS) srcs/main.c
-	$(CC) $(CFLAGS) srcs/main.c $(OBJS) $(INCLUDES) -o $(NAME)
+.c.o: 
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(LIBFT):
+	@make -sC $(LIBFT_PATH)
+
+$(NAME): $(OBJS) srcs/main.c $(LIBFT)
+	$(CC) $(CFLAGS) srcs/main.c $(OBJS) $(LIBFT) $(INCLUDES) -o $(NAME)
 
 test:  $(OBJS)
 	$(CC) $(CFLAGS) srcs/test.c $(OBJS) $(INCLUDES) -o $(NAME)
 
 clean: 
 	rm -f $(OBJS)
+	make clean -sC $(LIBFT_PATH)
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(LIBFT)
 
 re: fclean all
 

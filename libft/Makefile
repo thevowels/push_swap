@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC_CTYPE=	ft_isalpha.c ft_isdigit.c ft_isspace.c \
 			ft_islower.c ft_isupper.c ft_tolower.c \
-			ft_toupper.c ft_atoi.c ft_atof.c
+			ft_toupper.c ft_atoi.c ft_atof.c ft_safe_atoi_ps.c
 
 SRC_PRINT = ft_putstr.c ft_putstr_fd.c
 

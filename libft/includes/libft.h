@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 18:36:44 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/01/20 02:01:19 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/01/27 22:22:27 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_atoi(const char *str);
 int					ft_safe_atoi(const char *str, int *val);
+int					ft_safe_atoi_ps(const char *str, int *val);
 double				ft_atof(char *str);
 ///////////////////////////////////////////////////////////////////////////////
 //									STRING                                   //
