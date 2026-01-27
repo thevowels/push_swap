@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 03:22:45 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:48:44 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/01/27 23:31:37 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,16 +85,16 @@ void	do_op_down(t_stack *stack_a, t_stack *stack_b, t_cheapest *cheapest)
 	a_down = stack_a->count - cheapest->a_index;
 	b_down = stack_b->count - cheapest->b_index;
 	i = 0;
-	while (i++ <= ft_min(a_down, b_down))
+	while (i++ < ft_min(a_down, b_down))
 		reverse_rotate_command(stack_a, stack_b, "rrr");
 	if (a_down > b_down)
-		while (i < a_down)
+		while (i <= a_down)
 		{
 			reverse_rotate_command(stack_a, NULL, "rra");
 			i++;
 		}
 	else
-		while (i < b_down)
+		while (i <= b_down)
 		{
 			reverse_rotate_command(stack_b, NULL, "rrb");
 			i++;
