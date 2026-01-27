@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_control.c                                     :+:      :+:    :+:   */
+/*   turk.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 22:33:18 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/14 22:48:28 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/25 00:37:04 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/30 03:53:11 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef TURK_H
+# define TURK_H
 
-// TOdo check errors when the input is not integer or exceed the limits.
+# include "push_swap.h"
 
-t_stack *get_stack_from_args(char **argv)
-{	
-	t_stack *stack_a;
-	t_node	*node;
-	
-	stack_a = get_stack();
-	while(*argv)
-	{
-		node = get_node(ft_atoi(*argv));
-		push_stack(stack_a, node);
-		argv++;
-	}
-	return stack_a;
-}
+t_node	*find_target(t_stack *stack_a, t_node *current, t_basic *basics);
+void	move_back(t_stack *stack_a, t_stack *stack_b);
+bool	is_sorted(t_stack *stack_a);
+void	turk_sort(t_stack *stack_a, t_stack *stack_b);
+#endif

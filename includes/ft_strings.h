@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_test.c                                        :+:      :+:    :+:   */
+/*   ft_strings.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/13 17:01:43 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/13 17:16:29 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/30 04:48:24 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/30 04:48:46 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_STRINGS_H
+# define FT_STRINGS_H
 
-// void smth(char *s)
-// {
-// 	if(*s)
-// 		printf("%s\n", s);
-// }
+int	count_words(char *str);
+char *next_word(char *str);
 
-// int main(void)
-// {
-// 	smth("asdfasd");
-// 	smth(NULL);
-// 	smth("abc");
-
-// 	return (0);
-// }
+#endif

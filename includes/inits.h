@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   inits.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/24 18:02:08 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:35:00 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/25 00:04:56 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/30 03:52:40 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
+#ifndef INITS_H
+# define INITS_H
 
-/**
- * @brief Prints "Error" to stderr and exits the program with failure status
- *
- * This function is called when an error condition is detected in the program.
- * It writes "Error\n" to file descriptor 2 (stderr) and terminates the program
- * with EXIT_FAILURE status code.
- */
-void	error_exit(void)
-{
-	write(2, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
+# include "push_swap.h"
+
+t_stack	*init_stack(void);
+t_node	*init_node(int value);
+t_stack	*init_stack_from_arr(int *arr, int arr_len);
+t_stack	*init_stack_from_args(int argc, char **argv);
+#endif

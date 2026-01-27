@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/15 05:19:25 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:52:30 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libft/includes/libft.h"
+# include "ft_maths.h"
 # include <stdbool.h>
 
 typedef struct s_node
@@ -31,43 +32,50 @@ typedef struct s_stack
 	int				count;
 }					t_stack;
 
+// mix 1 for a_up b_down
+// mix 2 for a_down b_up
+typedef struct s_cost_calc
+{
+	int				same_up;
+	int				same_down;
+	int				mix_1;
+	int				mix_2;
+	int				cheapest_move;
+	int				cheapest_cost;
+}					t_cost_calc;
+
+typedef struct s_basic
+{
+	int				a_up;
+	int				a_down;
+	int				b_up;
+	int				b_down;
+	int				index;
+	int				a_index;
+	t_cost_calc		costs;
+}					t_basic;
+
+/*
+move
+0 => same_up
+1 => mix_1
+2 => mix_2
+3 => same_down
+*/
+typedef struct s_cheapest
+{
+	int				cost;
+	int				move;
+	int				a_index;
+	int				b_index;
+	t_node			*a_node;
+	t_node			*b_node;
+
+}					t_cheapest;
 // printf
 int					ft_printf(const char *str, ...);
 
 // errors
 void				error_exit(void);
 
-// init
-t_stack				*get_stack(void);
-t_node				*get_node(int val);
-t_node				*find_last_node(t_stack *stack);
-t_stack				*init_stack(int *arr, int arr_len);
-
-// stack_operations.c
-void				push_stack(t_stack *stack, t_node *node);
-t_node				*pop_stack(t_stack *stack);
-void				pop_push(t_stack *from, t_stack *to, char *command);
-
-void				swap(t_stack *stack, char *command);
-void				rotate(t_stack *stack, char *command);
-void				reverse_rotate(t_stack *stack, char *command);
-
-// arg_control
-t_stack				*get_stack_from_args(char **argv);
-// test
-void				print_stack(t_stack *stack, char *message);
-void				head_to_tail(t_stack *stack);
-void				tail_to_head(t_stack *stack);
-
-// turk operations
-void				do_sort(t_stack *stack_a);
-int					find_biggest_smaller(t_stack *stack, int value);
-void				prepare_stack(t_stack *stack, int value);
-void				put_to_right_position(t_stack *stack, t_node *node);
-void				go_head_to_biggest(t_stack *stack);
-void				do_sort_optimized(t_stack *stack_a);
-int					rotate_cost(t_stack *stack, int biggest_small);
-int					rev_rotate_cost(t_stack *stack, int biggest_small);
-void				prepare_stack_modified(t_stack *stack, int value, char s);
-void				move_head(t_stack *stack, int value);
 #endif

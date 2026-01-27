@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   test_helper.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/24 18:02:08 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 03:35:00 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/12/25 00:29:36 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/12/30 03:53:04 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
+#ifndef TEST_HELPER_H
+# define TEST_HELPER_H
 
-/**
- * @brief Prints "Error" to stderr and exits the program with failure status
- *
- * This function is called when an error condition is detected in the program.
- * It writes "Error\n" to file descriptor 2 (stderr) and terminates the program
- * with EXIT_FAILURE status code.
- */
-void	error_exit(void)
-{
-	write(2, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
+# include "push_swap.h"
+
+void	print_stack(t_stack *stack, char *message);
+void	head_to_tail(t_stack *stack);
+void	tail_to_head(t_stack *stack);
+#endif
