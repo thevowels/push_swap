@@ -17,8 +17,6 @@ SRC_FILES = errors.c ft_printf.c inits.c \
 			ft_maths.c ft_strings.c costs.c \
 			aux.c
 
-			
-
 SRCS = $(addprefix ./srcs/, $(SRC_FILES))
 
 OBJS = $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:57:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/02/01 03:28:47 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/02/01 04:09:19 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ t_node	*init_node(int value)
  *
  * @param arr Array of integers to add to the stack
  * @param arr_len Length of the array
- * @return t_stack* Pointer to the newly created stack 
+ * @return t_stack* Pointer to the newly created stack
  * with all elements added
  */
 // t_stack	*init_stack_from_arr(int *arr, int arr_len)
@@ -121,11 +121,12 @@ bool	is_contain(t_stack *stack, int value)
  * @brief Converts command line argument(s) to nodes and adds them to the stack
  *
 
+
  * Parses a string argument that may contain one or more space-separated integers
  * and adds each valid integer as a node to the end of the stack. The function
  * recursively processes multiple words within a single argument string.
 
- * Performs validation to ensure each substring is a valid integer 
+ * Performs validation to ensure each substring is a valid integer
  * and not a duplicate.
  *
  * @param stack The stack to add the node(s) to
@@ -170,8 +171,10 @@ t_stack	*init_stack_from_args(int argc, char **argv)
 {
 	t_stack	*stack;
 
-	if (argc == 1 || argv[1][0] == 0)
+	if (argc == 1)
 		exit(EXIT_SUCCESS);
+	if (argv[1][0] == 0)
+		error_exit();
 	stack = init_stack();
 	if (!stack)
 		error_exit();
