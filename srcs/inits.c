@@ -6,18 +6,20 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:57:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/01/27 22:49:47 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/02/01 04:09:19 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // init operations
 
+#include "ft_strings.h"
+#include "libft.h"
 #include "push_swap.h"
 #include "stack_aux.h"
 #include "stack_primitives.h"
-#include "ft_strings.h"
-#include "libft.h"
+
 bool	arg_to_stack(t_stack *stack, char *argv);
+
 /**
  * @brief Initializes an empty stack
  *
@@ -43,7 +45,8 @@ t_stack	*init_stack(void)
 /**
  * @brief Initializes a new node with the given value
  *
- * Allocates memory for a new node and sets its value. The index is set to 42
+ * Allocates memory for a new node and sets its value.
+ *  The index is set to 42
  * as a default value, and next/prev pointers are initialized to NULL.
  *
  * @param value The integer value to store in the node
@@ -69,7 +72,8 @@ t_node	*init_node(int value)
  *
  * @param arr Array of integers to add to the stack
  * @param arr_len Length of the array
- * @return t_stack* Pointer to the newly created stack with all elements added
+ * @return t_stack* Pointer to the newly created stack
+ * with all elements added
  */
 // t_stack	*init_stack_from_arr(int *arr, int arr_len)
 // {
@@ -116,21 +120,29 @@ bool	is_contain(t_stack *stack, int value)
 /**
  * @brief Converts command line argument(s) to nodes and adds them to the stack
  *
+
+
  * Parses a string argument that may contain one or more space-separated integers
  * and adds each valid integer as a node to the end of the stack. The function
  * recursively processes multiple words within a single argument string.
- * Performs validation to ensure each substring is a valid integer and not a duplicate.
+
+ * Performs validation to ensure each substring is a valid integer
+ * and not a duplicate.
  *
  * @param stack The stack to add the node(s) to
- * @param argv The string argument containing one or more space-separated integers
+
+ * @param argv The string argument containing one or more
+ * space-separated integers
  * @return bool true if all integers were successfully parsed and added,
- *              false if parsing failed, duplicate found, or memory allocation failed
+ * false if parsing failed, duplicate found,
+ * or memory allocation failed
  */
 bool	arg_to_stack(t_stack *stack, char *argv)
 {
 	int		i;
 	t_node	*node;
-	if(!argv)
+
+	if (!argv)
 		return (false);
 	if (ft_safe_atoi_ps(argv, &i) == -1 || is_contain(stack, i))
 		return (false);
@@ -138,8 +150,8 @@ bool	arg_to_stack(t_stack *stack, char *argv)
 	if (!node)
 		return (false);
 	push_end(stack, node);
-	if(count_words(argv) != 1)
-		if(!arg_to_stack(stack,next_word(argv)))
+	if (count_words(argv) != 1)
+		if (!arg_to_stack(stack, next_word(argv)))
 			return (false);
 	return (true);
 }
@@ -161,6 +173,8 @@ t_stack	*init_stack_from_args(int argc, char **argv)
 
 	if (argc == 1)
 		exit(EXIT_SUCCESS);
+	if (argv[1][0] == 0)
+		error_exit();
 	stack = init_stack();
 	if (!stack)
 		error_exit();

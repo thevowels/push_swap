@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 04:00:40 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/12/30 05:02:34 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/02/01 03:27:06 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * @brief Counts the number of words in a string
  *
  * Counts words separated by whitespace characters (space, newline, tab,
- * vertical tab, form feed, carriage return). A word is defined as a 
+ * vertical tab, form feed, carriage return). A word is defined as a
  * sequence of non-whitespace characters.
  *
  * @param str The string to count words in
@@ -24,8 +24,8 @@
  */
 int	count_words(char *str)
 {
-	int word_flag;
-	int word_count;
+	int	word_flag;
+	int	word_count;
 
 	word_count = 0;
 	word_flag = 0;
@@ -44,7 +44,7 @@ int	count_words(char *str)
 		}
 		str++;
 	}
-	return word_count;
+	return (word_count);
 }
 
 /**
@@ -58,24 +58,24 @@ int	count_words(char *str)
  * @return char* Pointer to the start of the next word,
  *               or NULL if no more words exist or str is NULL
  */
-char *next_word(char *str)
+char	*next_word(char *str)
 {
-	if(!str)
+	if (!str)
 		return (NULL);
-	while (*str && (*str == ' ' || *str == '\n' || *str == '\t'
-		|| *str == '\v' || *str == '\f' || *str == '\r'))
+	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' || *str == '\v'
+			|| *str == '\f' || *str == '\r'))
 		str++;
-	if(!*str)
+	if (!*str)
 		return (NULL);
-	while (*str && !(*str == ' ' || *str == '\n' || *str == '\t'
-		|| *str == '\v' || *str == '\f' || *str == '\r'))
+	while (*str && !(*str == ' ' || *str == '\n' || *str == '\t' || *str == '\v'
+			|| *str == '\f' || *str == '\r'))
 		str++;
-	if(!*str)
+	if (!*str)
 		return (NULL);
-	while (*str && (*str == ' ' || *str == '\n' || *str == '\t'
-		|| *str == '\v' || *str == '\f' || *str == '\r'))
+	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' || *str == '\v'
+			|| *str == '\f' || *str == '\r'))
 		str++;
-	if(!*str)
+	if (!*str)
 		return (NULL);
 	return (str);
 }

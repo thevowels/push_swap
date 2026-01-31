@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strings.h                                       :+:      :+:    :+:   */
+/*   aux.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/30 04:48:24 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/02/01 03:33:01 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/02/01 02:17:20 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/02/01 03:32:45 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STRINGS_H
-# define FT_STRINGS_H
+#ifndef AUX_H
+# define AUX_H
 
-int		count_words(char *str);
-char	*next_word(char *str);
+# include "push_swap.h"
+
+void	aux_sort(t_stack *stack_a);
 
 #endif

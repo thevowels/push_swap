@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 00:29:55 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/01/27 20:11:32 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/02/01 03:25:22 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	ft_max(int a, int b)
 		return (a);
 	return (b);
 }
+
 bool	check_str(const char *str)
 {
 	while (*str)
@@ -51,6 +52,7 @@ bool	check_str(const char *str)
 	}
 	return (true);
 }
+
 int	ft_isdigit(int i)
 {
 	return ((unsigned)i - '0' < 10);
