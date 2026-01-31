@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 23:57:30 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/01/27 22:49:47 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/02/01 03:20:05 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ t_stack	*init_stack_from_args(int argc, char **argv)
 {
 	t_stack	*stack;
 
-	if (argc == 1)
+	if (argc == 1 || argv[1][0] == 0)
 		exit(EXIT_SUCCESS);
 	stack = init_stack();
 	if (!stack)

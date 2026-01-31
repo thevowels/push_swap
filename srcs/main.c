@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 00:23:49 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/01/27 20:21:24 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/02/01 03:11:48 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "test_helper.h"
 #include "stack_aux.h"
 #include "turk.h"
+#include "aux.h"
+
 /**
  * @brief Main entry point for the push_swap program
  * 
@@ -32,6 +34,8 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 
 	stack_a = init_stack_from_args(argc, argv);
+	if(stack_a->count == 3)
+		aux_sort(stack_a);
 	stack_b = init_stack();
 	if (stack_b)
 	{
