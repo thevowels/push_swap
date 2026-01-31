@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:18:50 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/02/01 03:19:03 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/02/01 03:24:20 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ static int	checker(const char *str, long value)
 	return ((*str && (!(ft_isdigit(*str)) && !ft_isspace(*str)))
 		|| !ft_isint(value));
 }
-static void skip_spaces(const char *str, long *i)
+
+static void	skip_spaces(const char *str, long *i)
 {
-	while(ft_isspace(str[*i]))
+	while (ft_isspace(str[*i]))
 		*i = *i + 1;
 }
 
@@ -38,13 +39,14 @@ int	ft_safe_atoi_ps(const char *str, int *val)
 	long	a;
 	int		sign;
 	long	i;
+
 	a = 0;
 	sign = 1;
 	i = 0;
 	skip_spaces(str, &i);
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (ft_isspace(str[i + 1]) || str[i+1] == 0)
+		if (ft_isspace(str[i + 1]) || str[i + 1] == 0)
 			return (-1);
 		if (str[i] == '-')
 			sign *= -1;

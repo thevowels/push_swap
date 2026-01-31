@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 02:17:20 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/02/01 02:52:47 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/02/01 03:32:45 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "push_swap.h"
 
-void aux_sort(t_stack *stack_a);
+void	aux_sort(t_stack *stack_a);
 
 #endif
